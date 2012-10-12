@@ -1,0 +1,13 @@
+{
+    "name": "git-travis",
+    "description": "Git sub command to show travis status",
+    "version": "0.0.1",
+    "dependencies": {
+        "request": "~2.11.4",
+        "ansi-color": "*",
+        "which": "*"
+    },
+    "bin": {
+        "git-travis": "./bin/git-travis.js"
+    }
+}
