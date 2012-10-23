@@ -3,6 +3,7 @@
 var request = require('request'),
     which = require('which'),
     spawn = require('child_process').spawn,
+    exec = require('child_process').exec,
     color = require('ansi-color').set,
     base = 'https://travis-ci.org/',
     good = color("✔", 'green'),
@@ -46,7 +47,13 @@ var getInfo = function(callback) {
         if (!user || !repo) {
             throw('failed to parse git remote');
         }
-        callback(user, repo);
+        exec(git + ' status', {
+            cwd: process.cwd()
+        }, function(err, stdout) {
+            var branch = stdout.trim().split('\n')[0];
+            branch = branch.replace('# On branch ', '') || 'master';
+            callback(user, repo, branch);
+        });
     });
 };
 
@@ -56,8 +63,8 @@ which('git', function(err, gitBin) {
         process.exit(1);
     }
     git = gitBin;
-    getInfo(function(user, repo) {
-        console.log('Fetching build status for', user + '/' + repo);
+    getInfo(function(user, repo, branch) {
+        console.log('Fetching build status for', user + '/' + repo + ':' + branch);
         request({
             url: base + user + '/' + repo + '/builds.json',
             json: true
@@ -68,6 +75,17 @@ which('git', function(err, gitBin) {
             }
             var item = res.body.shift(),
                 status = (item.status ? bad : good);
+            
+            if (item.branch !== branch) {
+                res.body.some(function(i) {
+                    var ret = (i.branch === branch);
+                    if (ret) {
+                        item = i;
+                    }
+                    return ret;
+                });
+            }
+
             if (item.status === null) {
                 status = progress;
             }
