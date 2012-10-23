@@ -48,6 +48,27 @@ Fetching build status for bestiejs/lodash
 ```
 
 
+It also supports your current working branch. It will try to locate the latest build from your current active branch and show that to you.
+
+```
+[yeti][grover (0.1.0)] ➔ git travis
+Fetching build status for davglass/grover:0.1.0
+    ✔ davglass/grover
+        Compare:  https://github.com/davglass/grover/compare/5cbde21f2ede...13206b8df73a
+        ✔ 13206b8 (0.1.0) Change for travis (Dav Glass <davglass@gmail.com>) (finished)
+            ✔ 61.1 node_js 0.8
+            ✔ 61.2 node_js 0.9
+[yeti][grover (0.1.0)] ➔ git co master
+Switched to branch 'master'
+[yeti][grover (master)] ➔ git travis
+Fetching build status for davglass/grover:master
+    ✔ davglass/grover
+        Compare:  https://github.com/davglass/grover/compare/fd8838853944...7295735b5528
+        ✔ 7295735 (master) Removed deprecated 0.4 node build (Dav Glass <davglass@gmail.com>) (finished)
+            ✔ 60.1 node_js 0.8
+            ✔ 60.2 node_js 0.9
+```
+
 Notes
 -----
 
