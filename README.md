@@ -74,4 +74,7 @@ Notes
 
 This was a simple script because I liked it, I'll add some configuration to it in the future.
 
+Build Status
+------------
 
+[![Build Status](https://secure.travis-ci.org/davglass/git-travis.png?branch=master)](https://travis-ci.org/davglass/git-travis)
