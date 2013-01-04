@@ -5,8 +5,7 @@
     "dependencies": {
         "request": "~2.11.4",
         "ansi-color": "*",
-        "which": "*",
-        "nopt": "~2.0.0"
+        "which": "*"
     },
     "devDependencies": {
         "yui-lint": "~0.1.1",
