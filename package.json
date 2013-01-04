@@ -1,11 +1,12 @@
 {
     "name": "git-travis",
     "description": "Git sub command to show travis status",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "dependencies": {
         "request": "~2.11.4",
         "ansi-color": "*",
-        "which": "*"
+        "which": "*",
+        "nopt": "~2.0.0"
     },
     "devDependencies": {
         "yui-lint": "~0.1.1",
