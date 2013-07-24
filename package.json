@@ -1,7 +1,7 @@
 {
     "name": "git-travis",
     "description": "Git sub command to show travis status",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "dependencies": {
         "travis-ci": "~0.1.2",
         "ansi-color": "*",
