@@ -3,7 +3,7 @@
     "description": "Git sub command to show travis status",
     "version": "0.1.8",
     "dependencies": {
-        "travis-ci": "~0.1.2",
+        "travis-ci": "~1.0.0",
         "ansi-color": "*",
         "which": "*"
     },
