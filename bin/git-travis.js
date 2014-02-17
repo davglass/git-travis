@@ -9,6 +9,10 @@ http://yuilibrary.com/license/
 var travis = require('../lib/');
 
 travis.info(function(user, repo, branch) {
-    travis.print(user, repo, branch);
+    travis.print(user, repo, branch, function (err) {
+        if (err) {
+            throw(err);
+        }
+    });
 });
 
