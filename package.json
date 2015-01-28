@@ -4,14 +4,16 @@
     "version": "1.0.0",
     "dependencies": {
         "chalk": "~0.5.1",
+        "github-url-from-git": "~1.4.0",
         "prompt": "~0.2.14",
         "travis-ci": "^1.0.0",
         "which": "^1.0.8"
     },
     "devDependencies": {
-        "yui-lint": "~0.1.1",
+        "istanbul": "~0.3.5",
         "jshint": "~0.9.0",
-        "vows": "*"
+        "mockery": "^1.4.0",
+        "vows": "~0.8.1"
     },
     "keywords": [
         "travis-ci",
@@ -24,7 +26,8 @@
         "git-travis": "./bin/git-travis.js"
     },
     "scripts": {
-        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/ ./bin/"
+        "pretest": "jshint ./lib/ ./bin/",
+        "test": "istanbul cover --print both -- vows --spec ./tests/*.js"
     },
     "preferGlobal": "true",
     "bugs": {
