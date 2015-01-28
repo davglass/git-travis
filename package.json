@@ -1,42 +1,43 @@
 {
-  "name": "git-travis",
-  "description": "Git sub command to show travis status",
-  "version": "0.1.10",
-  "dependencies": {
-    "travis-ci": "~1.0.0",
-    "ansi-color": "*",
-    "which": "*"
-  },
-  "devDependencies": {
-    "yui-lint": "~0.1.1",
-    "jshint": "~0.9.0",
-    "vows": "*"
-  },
-  "keywords": [
-    "travis-ci",
-    "travis",
-    "git-cli",
-    "builds"
-  ],
-  "main": "./lib/",
-  "bin": {
-    "git-travis": "./bin/git-travis.js"
-  },
-  "scripts": {
-    "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/ ./bin/"
-  },
-  "preferGlobal": "true",
-  "bugs": {
-    "url": "http://github.com/davglass/git-travis/issues"
-  },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "https://github.com/davglass/git-travis/blob/master/LICENSE"
+    "name": "git-travis",
+    "description": "Git sub command to show travis status",
+    "version": "0.1.10",
+    "dependencies": {
+        "chalk": "~0.5.1",
+        "prompt": "~0.2.14",
+        "travis-ci": "^1.0.0",
+        "which": "^1.0.8"
+    },
+    "devDependencies": {
+        "yui-lint": "~0.1.1",
+        "jshint": "~0.9.0",
+        "vows": "*"
+    },
+    "keywords": [
+        "travis-ci",
+        "travis",
+        "git-cli",
+        "builds"
+    ],
+    "main": "./lib/",
+    "bin": {
+        "git-travis": "./bin/git-travis.js"
+    },
+    "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/ ./bin/"
+    },
+    "preferGlobal": "true",
+    "bugs": {
+        "url": "http://github.com/davglass/git-travis/issues"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "https://github.com/davglass/git-travis/blob/master/LICENSE"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/git-travis.git"
     }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/davglass/git-travis.git"
-  }
 }
