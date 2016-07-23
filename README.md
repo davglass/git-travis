@@ -16,6 +16,17 @@ Change into a git repo that has builds on [Travis-CI](https://travis-ci.org/).
 
 Then issue: `git travis` to display the latest build.
 
+Options
+-----
+
+To access github data over ssh, generate a GitHub Personal Access Token, make sure you have the following environment variable
+```
+export GITHUB_ACCESS_TOKEN=your_personal_access_token
+```
+
+More help:
+https://help.github.com/articles/creating-an-access-token-for-command-line-use/
+
 
 Examples
 --------
