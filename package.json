@@ -1,7 +1,7 @@
 {
   "name": "git-travis",
   "description": "Git sub command to show travis status",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "dependencies": {
     "chalk": "^1.0.0",
     "prompt": "~0.2.14",
