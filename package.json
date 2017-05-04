@@ -4,14 +4,14 @@
   "version": "3.1.0",
   "dependencies": {
     "chalk": "^1.0.0",
-    "prompt": "~0.2.14",
+    "prompt": "^1.0.0",
     "travis-ci": "^2.1.1",
     "which": "^1.0.8"
   },
   "devDependencies": {
-    "yui-lint": "~0.1.1",
-    "jshint": "~0.9.0",
-    "vows": "*"
+    "eslint": "^3.19.0",
+    "jenkins-mocha": "^4.1.2",
+    "nyc": "^10.3.0"
   },
   "keywords": [
     "travis-ci",
@@ -24,7 +24,9 @@
     "git-travis": "./bin/git-travis.js"
   },
   "scripts": {
-    "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/ ./bin/"
+    "pretest": "eslint --fix .",
+    "test": "jenkins-mocha ./tests/",
+    "posttest": "nyc check-coverage; nyc report"
   },
   "preferGlobal": "true",
   "bugs": {
@@ -34,5 +36,12 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/davglass/git-travis.git"
+  },
+  "nyc": {
+      "check-coverage": true,
+      "statements": 86,
+      "lines": 86,
+      "branches": 70,
+      "functions": 88
   }
 }

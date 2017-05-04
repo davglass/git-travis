@@ -8,8 +8,8 @@ http://yuilibrary.com/license/
 
 var travis = require('../lib/');
 
-travis.info(function(user, repo, branch) {
-    travis.print(user, repo, branch, function (err) {
+travis.info((user, repo, branch) => {
+    travis.print(user, repo, branch, (err) => {
         if (err) {
             throw(err);
         }
